@@ -36,9 +36,9 @@ public class daoCursos {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int id = rs.getInt("cuId");
-                String nombre = rs.getString("cuNombre");
-                String nit = rs.getString("cuEstatus");
+                int id = rs.getInt("codigo_curso");
+                String nombre = rs.getString("nombre_curso");
+                String nit = rs.getString("estatus_curso");
                 clsCursos aplicacion = new clsCursos();
                 aplicacion.setIdCurso(id);
                 aplicacion.setNombreCurso(nombre);
@@ -88,7 +88,7 @@ public class daoCursos {
             stmt = conn.prepareStatement(SQL_UPDATE);
             stmt.setString(1, aplicacion.getNombreCurso());
             stmt.setString(2, aplicacion.getEstatus());
-            stmt.setInt(5, aplicacion.getIdCurso());
+            stmt.setInt(3, aplicacion.getIdCurso());
 
             rows = stmt.executeUpdate();
             System.out.println("Registros actualizado:" + rows);
@@ -170,9 +170,9 @@ public class daoCursos {
             //stmt.setString(1, aplicacion.getNombreAplicacion());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int id = rs.getInt("cuId");
-                String nombre = rs.getString("cuNombre");
-                String nit = rs.getString("cuEstatus");
+                int id = rs.getInt("codigo_curso");
+                String nombre = rs.getString("nombre_curso");
+                String nit = rs.getString("estatus_curso");
                 
                 aplicacion.setIdCurso(id);
                 aplicacion.setNombreCurso(nombre);

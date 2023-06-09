@@ -21,7 +21,7 @@ public class MdiGeneral extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         this.setExtendedState(MdiGeneral.MAXIMIZED_BOTH);
-        this.setTitle("Parcial 2 Monica Perez, 9959-21-1840");
+        this.setTitle("Examen Final Monica Perez, 9959-21-1840");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
@@ -40,9 +40,11 @@ public class MdiGeneral extends javax.swing.JFrame {
         mnuSalirSistema = new javax.swing.JCheckBoxMenuItem();
         mnuCatalogos = new javax.swing.JMenu();
         mnuCatalogosMantenimientos = new javax.swing.JMenu();
-        mantenimientoClientes = new javax.swing.JCheckBoxMenuItem();
+        mantenimientoCursos = new javax.swing.JCheckBoxMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         mnuConsultas = new javax.swing.JMenu();
         consultaBitacora = new javax.swing.JCheckBoxMenuItem();
+        jMenu2 = new javax.swing.JMenu();
         mnuAyudas = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,18 +87,21 @@ public class MdiGeneral extends javax.swing.JFrame {
             }
         });
 
-        mantenimientoClientes.setSelected(true);
-        mantenimientoClientes.setText("Mantenimiento Cursos");
-        mantenimientoClientes.addActionListener(new java.awt.event.ActionListener() {
+        mantenimientoCursos.setSelected(true);
+        mantenimientoCursos.setText("Mantenimiento Cursos");
+        mantenimientoCursos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mantenimientoClientesActionPerformed(evt);
+                mantenimientoCursosActionPerformed(evt);
             }
         });
-        mnuCatalogosMantenimientos.add(mantenimientoClientes);
+        mnuCatalogosMantenimientos.add(mantenimientoCursos);
 
         mnuCatalogos.add(mnuCatalogosMantenimientos);
 
         mnuGeneral.add(mnuCatalogos);
+
+        jMenu1.setText("Procesos");
+        mnuGeneral.add(jMenu1);
 
         mnuConsultas.setText("Informes");
         mnuConsultas.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +120,9 @@ public class MdiGeneral extends javax.swing.JFrame {
         mnuConsultas.add(consultaBitacora);
 
         mnuGeneral.add(mnuConsultas);
+
+        jMenu2.setText("Herramientas");
+        mnuGeneral.add(jMenu2);
 
         mnuAyudas.setText("Ayuda");
         mnuGeneral.add(mnuAyudas);
@@ -151,15 +159,15 @@ public class MdiGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mnuArchivoActionPerformed
 
-    private void mantenimientoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoClientesActionPerformed
+    private void mantenimientoCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mantenimientoCursosActionPerformed
         // TODO add your handling code here:
-/*        frmMantenimientoCursos ventana = new frmMantenimientoCursos();
+        frmMantenimientoCursos ventana = new frmMantenimientoCursos();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
-        ventana.show();*/
-    }//GEN-LAST:event_mantenimientoClientesActionPerformed
+        ventana.show();
+    }//GEN-LAST:event_mantenimientoCursosActionPerformed
 
     private void mnuCatalogosMantenimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCatalogosMantenimientosActionPerformed
         // TODO add your handling code here:
@@ -216,7 +224,9 @@ public class MdiGeneral extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBoxMenuItem consultaBitacora;
     public static javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JCheckBoxMenuItem mantenimientoClientes;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JCheckBoxMenuItem mantenimientoCursos;
     private javax.swing.JMenu mnuArchivo;
     private javax.swing.JMenu mnuAyudas;
     private javax.swing.JMenu mnuCatalogos;
