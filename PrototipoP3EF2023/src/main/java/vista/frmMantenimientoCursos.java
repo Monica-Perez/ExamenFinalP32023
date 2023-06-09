@@ -49,9 +49,9 @@ public class frmMantenimientoCursos extends javax.swing.JInternalFrame {
         tablaUsuarios.setModel(modelo);
         String[] dato = new String[3];
         for (int i = 0; i < listaAplicaciones.size(); i++) {
-            dato[0] = Integer.toString(listaAplicaciones.get(i).getIdCliente());
-            dato[1] = listaAplicaciones.get(i).getNombreCliente();
-            dato[2] = listaAplicaciones.get(i).getNitCliente();
+            dato[0] = Integer.toString(listaAplicaciones.get(i).getIdCurso());
+            dato[1] = listaAplicaciones.get(i).getNombreCurso();
+            dato[2] = listaAplicaciones.get(i).getEstatus();
             modelo.addRow(dato);
         }       
     }
@@ -292,7 +292,7 @@ public class frmMantenimientoCursos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         int registrosBorrados=0;
         clsCursos aplicacion = new clsCursos();
-        aplicacion.setIdCliente(Integer.parseInt(txtbuscado.getText()));
+        aplicacion.setIdCurso(Integer.parseInt(txtbuscado.getText()));
         registrosBorrados=aplicacion.setBorrarAplicacion(aplicacion);
         JOptionPane.showMessageDialog(null, "Registro Borrado\n",
             "Información del Sistema", JOptionPane.INFORMATION_MESSAGE);
@@ -302,8 +302,8 @@ public class frmMantenimientoCursos extends javax.swing.JInternalFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         clsCursos aplicacion = new clsCursos();
-        aplicacion.setNombreCliente(txtNombre.getText());
-        aplicacion.setNitCliente(txtEstatus.getText());
+        aplicacion.setNombreCurso(txtNombre.getText());
+        aplicacion.setEstatus(txtEstatus.getText());
         aplicacion.setIngresarAplicacion(aplicacion);
         JOptionPane.showMessageDialog(null, "Registro Ingresado\n",
             "Información del Sistema", JOptionPane.INFORMATION_MESSAGE);
@@ -315,11 +315,11 @@ public class frmMantenimientoCursos extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         clsCursos aplicacion = new clsCursos();
         //aplicacion.setNombreAplicacion(txtbuscado.getText());
-        aplicacion.setIdCliente(Integer.parseInt(txtbuscado.getText()));
+        aplicacion.setIdCurso(Integer.parseInt(txtbuscado.getText()));
         aplicacion = aplicacion.getBuscarInformacionAplicacionPorId(aplicacion);
         System.out.println("Cliente retornado:" + aplicacion);
-        txtNombre.setText(aplicacion.getNombreCliente());
-        txtEstatus.setText(aplicacion.getNitCliente());
+        txtNombre.setText(aplicacion.getNombreCurso());
+        txtEstatus.setText(aplicacion.getEstatus());
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -342,9 +342,9 @@ public class frmMantenimientoCursos extends javax.swing.JInternalFrame {
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         //TODO add your handling code here:
         clsCursos aplicacion = new clsCursos();
-        aplicacion.setIdCliente(Integer.parseInt(txtbuscado.getText()));
-        aplicacion.setNombreCliente(txtNombre.getText());
-        aplicacion.setNitCliente(txtEstatus.getText());
+        aplicacion.setIdCurso(Integer.parseInt(txtbuscado.getText()));
+        aplicacion.setNombreCurso(txtNombre.getText());
+        aplicacion.setEstatus(txtEstatus.getText());
         aplicacion.setModificarAplicacion(aplicacion);
         JOptionPane.showMessageDialog(null, "Registro Modificado\n",
             "Información del Sistema", JOptionPane.INFORMATION_MESSAGE);
