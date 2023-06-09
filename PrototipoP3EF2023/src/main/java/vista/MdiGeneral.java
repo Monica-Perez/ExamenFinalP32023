@@ -42,10 +42,12 @@ public class MdiGeneral extends javax.swing.JFrame {
         mnuCatalogosMantenimientos = new javax.swing.JMenu();
         mantenimientoCursos = new javax.swing.JCheckBoxMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        asignacioncurso = new javax.swing.JMenuItem();
         mnuConsultas = new javax.swing.JMenu();
         consultaBitacora = new javax.swing.JCheckBoxMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mnuAyudas = new javax.swing.JMenu();
+        ayudacurso = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,6 +103,15 @@ public class MdiGeneral extends javax.swing.JFrame {
         mnuGeneral.add(mnuCatalogos);
 
         jMenu1.setText("Procesos");
+
+        asignacioncurso.setText("Asignacion de Cursos");
+        asignacioncurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                asignacioncursoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(asignacioncurso);
+
         mnuGeneral.add(jMenu1);
 
         mnuConsultas.setText("Informes");
@@ -125,6 +136,15 @@ public class MdiGeneral extends javax.swing.JFrame {
         mnuGeneral.add(jMenu2);
 
         mnuAyudas.setText("Ayuda");
+
+        ayudacurso.setText("Ayuda Cursos");
+        ayudacurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudacursoActionPerformed(evt);
+            }
+        });
+        mnuAyudas.add(ayudacurso);
+
         mnuGeneral.add(mnuAyudas);
 
         setJMenuBar(mnuGeneral);
@@ -186,6 +206,26 @@ public class MdiGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mnuConsultasActionPerformed
 
+    private void ayudacursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudacursoActionPerformed
+        // TODO add your handling code here:
+        frmAyudaCursos ventana = new frmAyudaCursos();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+        ventana.show();
+    }//GEN-LAST:event_ayudacursoActionPerformed
+
+    private void asignacioncursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asignacioncursoActionPerformed
+        // TODO add your handling code here:
+        frmAsignacion ventana = new frmAsignacion();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.             height) / 2);
+        ventana.show();
+    }//GEN-LAST:event_asignacioncursoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -222,6 +262,8 @@ public class MdiGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem asignacioncurso;
+    private javax.swing.JMenuItem ayudacurso;
     private javax.swing.JCheckBoxMenuItem consultaBitacora;
     public static javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
