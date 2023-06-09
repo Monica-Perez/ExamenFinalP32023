@@ -1,0 +1,17 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=CursosAyuda.chm
+Contents file=ayudacurso.hhc
+Default Window=AyudaMantenimientoCurso
+Display compile progress=No
+Language=0x100a Español (Guatemala)
+
+[WINDOWS]
+AyudaMantenimientoCurso="Capacitacion","ayudacurso.hhc",,"Cursos.htm","Cursos.htm",,,,,0x23520,,0x387e,,,,,,,,0
+
+
+[FILES]
+Cursos.htm
+
+[INFOTYPES]
+
